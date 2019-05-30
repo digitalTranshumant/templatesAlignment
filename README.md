@@ -27,7 +27,7 @@ git clone https://github.com/digitalTranshumant/templatesAlignment.git
 
 ### Run the python scripts
 * [00ExtractNamedTempates.ipynb](00ExtractNamedTempates.ipynb): Run this notebook to extract all templates from dumps. This process can be slow, for example, in a machine with 8 cores, and 64Gb of Ram, it takes around 24 hours (in total) for the 18 languages listed before.
-* [01Download.ipynb](01Download Models.ipynb): This scripts download the pre-trained fasttext models. Each model unziped would use around 15Gb of hard drivee.
+* [01Download.ipynb](01Download&#32;Models.ipynb): This scripts download the pre-trained fasttext models. Each model unziped would use around 15Gb of hard drivee.
 * [02alignmentsSpark.ipynb](02alignmentsSpark.ipynb): This script create the alignment matrices for each language pair. The script is create to work in a Spark cluster, but you can modified for using in normal python, replacing the parquet data by a SQL dump from  [this public table](https://www.mediawiki.org/wiki/Wikibase/Schema/wb_items_per_site).
 * [03ProduceAlignments.ipynb](03ProduceAlignments.ipynb): This script creates the alignments. It can take around 10 hours to run.
 
