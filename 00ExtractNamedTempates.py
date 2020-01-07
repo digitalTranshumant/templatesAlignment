@@ -17,8 +17,7 @@ import mwparserfromhell
 
 #config
 dumpDate = 'latest'
-#langs = ['es','ca','en'] #wiki
-langs = ['ru']
+langs = ['en','ru','id', 'jv', 'bn', 'ml', 'tl', 'sq'] #wiki
 
 templates_RE = re.compile(r'{{(.+?)}}')
 
