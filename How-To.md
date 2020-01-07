@@ -15,8 +15,9 @@ jupyter nbconvert --to python nb.ipynb
 
 5. Run all scripts in order:
 
-`01Download Models.py` need to run with ipython or just wget needed models
-manually.
+`01Download Models.py` need to run with ipython or just download needed models.
+
+Unzip .zip files manually.
 
 6. We also need https://github.com/babylonhealth/fastText_multilingual, See
 issue #23 there for installation error.
