@@ -9,15 +9,15 @@ jupyter nbconvert --to python nb.ipynb
 ```
 2. Update config.json, remove unneeded pair.
 
-3. Put Wikipedia dumps under: `current directory/../../dumps/%swiki/latest/` only.
+3. Put Wikipedia dumps under: `templatesAlignment/../../dumps/%swiki/latest/` only.
 
-4. Rename dump date to reflect date as `latest` to simplify.
+4. Rename dump to reflect dumpdate as `latest` to simplify script run.
 
 5. Run all scripts in order:
 
 `01Download Models.py` need to run with ipython or just download needed models.
 
-Unzip .zip files manually.
+6. Unzip .zip files.
 
-6. We also need https://github.com/babylonhealth/fastText_multilingual, See
-issue #23 there for installation error.
+7. Download: https://github.com/babylonhealth/fastText_multilingual
+And apply patch given at #23 to fix ModuleNotFound error while running script.
