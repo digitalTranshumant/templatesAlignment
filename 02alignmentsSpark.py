@@ -7,15 +7,10 @@
 # The matrices are created using [this approach](https://github.com/Babylonpartners/fastText_multilingual/blob/master/align_your_own.ipynb), but instead of using bilingual dictionaries we use the Wikidata labels.
 # Here we use a parquet dump clo
 
-# In[1]:
-
-
 import numpy as np
 import pandas as pd
-import os 
+import os
 from pyspark.sql.functions import regexp_replace
-
-
 from fastText_multilingual.fasttext import FastVector
 
 # from https://stackoverflow.com/questions/21030391/how-to-normalize-array-numpy
@@ -66,15 +61,12 @@ def learn_transformation(source_matrix, target_matrix, normalize_vectors=True):
     # return orthogonal transformation which aligns source language to the target
     return np.matmul(U, V)
 
-
 ## Prepare folder
 outputFolder = 'my_alingments'
 if not os.path.exists(outputFolder):
     os.makedirs(outputFolder)
 
-
 # In[2]:
-
 
 # get wikidata data
 
@@ -83,9 +75,11 @@ df = df[df['page_namespace'] == 0]
 df = df.withColumn('page', regexp_replace('page_title', '_', ' '))
 df = df.select('wiki_db','item_id','page')
 
+# Use local data
+#df.write.csv('wikidata.csv')
+#df = df.read.csv('wikidata.csv')
 
 # In[3]:
-
 
 import glob,os
 vectors = sorted(glob.glob('vectors/wiki.*.vec'), key=os.path.getsize) #sorted by size to load the largest files just once
@@ -123,11 +117,3 @@ while vectors:
         transform = learn_transformation(source_matrix, target_matrix)
         with open('%s/apply_in_%s_to_%s.txt' % (outputFolder,lang2_code,lang1_code),'w') as f:
             np.savetxt(f, transform)
-        
-
-
-# In[ ]:
-
-
-
-
