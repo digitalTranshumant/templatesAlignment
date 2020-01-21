@@ -70,14 +70,14 @@ if not os.path.exists(outputFolder):
 
 # get wikidata data
 
-df = spark.read.parquet('/user/joal/wmf/data/wmf/wikidata/item_page_link/20190204')
-df = df[df['page_namespace'] == 0]
-df = df.withColumn('page', regexp_replace('page_title', '_', ' '))
-df = df.select('wiki_db','item_id','page')
+#df = spark.read.parquet('/user/joal/wmf/data/wmf/wikidata/item_page_link/20190204')
+#df = df[df['page_namespace'] == 0]
+#df = df.withColumn('page', regexp_replace('page_title', '_', ' '))
+#df = df.select('wiki_db','item_id','page')
 
 # Use local data
-#df.write.csv('wikidata.csv')
-#df = df.read.csv('wikidata.csv')
+import pandas
+df = pandas.read_csv('WikidataItems.csv', error_bad_lines=False, sep=',')
 
 # In[3]:
 
