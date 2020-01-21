@@ -8,7 +8,6 @@
 # Here we use a parquet dump clo
 
 import numpy as np
-import pandas as pd
 import os
 from pyspark.sql.functions import regexp_replace
 from fastText_multilingual.fasttext import FastVector
