@@ -95,7 +95,7 @@ while vectors:
         lang2_dictionary = FastVector(vector_file=lang2)
         lang2_code = lang2.split('.')[1]
         print('==',lang2_code)
-        df2 = df[df.wiki_db == '%swiki' % lang1_code].join(df[df.wiki_db == '%swiki' % lang2_code].withColumnRenamed("page", "page2").withColumnRenamed('wiki_db','wiki_db2'),on='item_id')
+        df2 = df[df.wiki_db == '%swiki' % lang1_code].join(df[df.wiki_db == '%swiki' % lang2_code].withColumnRenamed("page", "page2").withColumnRenamed("wiki_db", "wiki_db2"),on='item_id')
         pairs = df2.toPandas()       
         bilingual_dictionary = list(zip(pairs['page'],pairs['page2']))
         ##common words
