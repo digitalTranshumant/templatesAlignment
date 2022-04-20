@@ -4,5 +4,5 @@ mwparserfromhell==0.5
 networkx==2.2
 scipy==0.19.1
 matplotlib==3.0.2
-bottle==0.12.16
+bottle==0.12.19
 fasttext==0.9.2
