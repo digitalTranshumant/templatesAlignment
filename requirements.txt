@@ -1,5 +1,5 @@
 requests==2.20.0
-numpy==1.11.0
+numpy==1.22.0
 mwparserfromhell==0.5
 networkx==2.2
 scipy==0.19.1
