@@ -1,4 +1,4 @@
-# Aligning named tempaltes on Wikipedia
+# Aligning named templates on Wikipedia
 
 One challenge for the [Content Translation](https://en.wikipedia.org/wiki/Wikipedia:Content_translation_tool) tool is translate [mediwiki templates](https://www.mediawiki.org/wiki/Help:Templates). While finding the template in target language can be done through Wikidata, finding the mapping between template parameters is not trivial. 
 
